@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'webratio/ant'
+      image 'maven:latest'
     }
   }
 
   stages {
     stage('Build') {
       steps {
-        sh 'ant make'
+        sh 'mvn build'
       }
     }
     stage('Test') {
