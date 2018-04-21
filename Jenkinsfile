@@ -9,15 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Home is $HOME'
         sh 'mvn -B -DskipTests clean package'
       }
     }
     stage('Test') {
       steps {
-        echo 'Testing..'
-        echo 'Testing 1'
-        echo 'Testing 2'
+        sh 'mvn test'
       }
     }
     stage('Deploy') {
