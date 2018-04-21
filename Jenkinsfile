@@ -4,7 +4,6 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cd jigasi'
         sh 'ant make'
       }
     }
