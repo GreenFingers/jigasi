@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'webratio/ant'
+    }
+  }
 
   stages {
     stage('Build') {
