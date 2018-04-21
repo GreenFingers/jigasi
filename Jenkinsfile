@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'maven:latest'
-      args '-v $HOME/.m2:/root/.m2'
+      args '-v /root/.m2:/root/.m2'
     }
   }
 
@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Home is $HOME'
-        sh 'mvn package'
+        sh 'mvn -B -DskipTests clean package'
       }
     }
     stage('Test') {
