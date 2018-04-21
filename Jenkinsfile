@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'Copy package somewhere'
+        echo 'Copy package somewhere in some server'      
       }
     }
   }
